@@ -1,0 +1,20 @@
+Node.js Ubuntu Install Notes:
+
+After installing the VM:
+
+# install sshd, build tools, ssl libs, and git
+sudo apt-get -q -y install openssh-server
+sudo apt-get -q -y install build-essential curl libssl-dev apache2-utils
+sudo apt-get -q -y install git-core git-svn
+
+# download and install node
+wget http://nodejs.org/dist/node-v0.2.6.tar.gz
+tar zxvf node-v0.2.6.tar.gz
+cd node-v0.2.6
+./configure
+make
+sudo make install
+
+# install npm
+sudo chown -R app /usr/local/{share/man,bin,lib/node}
+curl http://npmjs.org/install.sh | sh

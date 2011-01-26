@@ -4,11 +4,11 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{rubber}
-  s.version = "1.8.0"
+  s.name = %q{rubber-jcarnegie}
+  s.version = "0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Matt Conway"]
+  s.authors = ["Matt Conway", "Jeff Carnegie"]
   s.date = %q{2010-12-07}
   s.default_executable = %q{vulcanize}
   s.description = %q{      The rubber plugin enables relatively complex multi-instance deployments of RubyOnRails applications to
@@ -17,8 +17,10 @@ Gem::Specification.new do |s|
       can also assign multiple roles to a single instance. This lets one start out with a single ec2 instance
       (belonging to all roles), and add new instances into the mix as needed to scale specific facets of your
       deployment, e.g. adding in instances that serve only as an 'app' role to handle increased app server load.
+      
+      Adding deployment tasks for Node.js and others.
 }
-  s.email = %q{matt@conwaysplace.com}
+  s.email = %q{jeff@carn.org}
   s.executables = ["vulcanize"]
   s.extra_rdoc_files = [
     "README",
@@ -165,6 +167,9 @@ Gem::Specification.new do |s|
     "generators/vulcanize/templates/nginx/config/rubber/role/web_tools/tools-nginx.auth",
     "generators/vulcanize/templates/nginx/config/rubber/rubber-nginx.yml",
     "generators/vulcanize/templates/nginx/templates.yml",
+    "generators/vulcanize/templates/node.js/config/rubber/deploy-node.rb",
+    "generators/vulcanize/templates/node.js/config/rubber/rubber-node.yml",
+    "generators/vulcanize/templates/node.js/config/INSTALL_NOTES",
     "generators/vulcanize/templates/passenger/config/rubber/deploy-passenger.rb",
     "generators/vulcanize/templates/passenger/config/rubber/role/passenger/munin-passenger-memory.conf",
     "generators/vulcanize/templates/passenger/config/rubber/role/passenger/munin-passenger-sudoers.conf",
@@ -412,7 +417,7 @@ Gem::Specification.new do |s|
     "lib/rubber/util.rb",
     "rails/init.rb"
   ]
-  s.homepage = %q{http://github.com/wr0ngway/rubber}
+  s.homepage = %q{http://github.com/jcarnegie/rubber}
   s.post_install_message = %q{
 ********************************************************************************
 
